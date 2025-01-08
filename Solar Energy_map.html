@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapbox Map with Slider</title>
+    <link href="./css/Solar Energy.css" rel='stylesheet' type='text/css' />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+</head>
+<body>
+    <div id='map'></div>
+    <div id="map_interactive">
+        <div class='map-overlay'>
+            <div class="map-overlay-inner">
+                <h2 class="graph">NYC Solar Installations Map (Estimated kW)</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <input id='year-slider' type='range' min='0' max='6' step='1' value='0' list='tickmarks' />
+                                <datalist id="tickmarks">
+                                    <option value="0" label="1996-2013"></option>
+                                    <option value="1" label="2014-2015"></option>
+                                    <option value="2" label="2016-2017"></option>
+                                    <option value="3" label="2018-2019"></option>
+                                    <option value="4" label="2020-2021"></option>
+                                    <option value="5" label="2022-2023"></option>
+                                    <option value="6" label="2024"></option>
+                                </datalist>
+                        </td>
+                            <td>
+                                <label id='year-label'>Year: 1996-2013</label>
+                            </td>
+                    </tr>
+                </table>
+                    <p class=>Data: <a href="https://www.nyc.gov/site/dcas/agencies/clean-energy-generation.page">NEW YORK CITY SOLAR ENERGY DISTRIBUTION</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="legend" class="legend">
+        <div class="legend-gradient">
+            <span>0.46 kW</span>
+            <div class="gradient"></div>
+            <span>2210 kW</span>
+        </div>
+        <div class="legend-single">
+            <span class="color-box"></span>
+            <span>In progress installation in 2024</span>
+        </div>
+    </div>
+    
+    <script>
+       
+    // Your Mapbox access token
+    mapboxgl.accessToken = 'pk.eyJ1IjoieWljaGVuZ3VjbCIsImEiOiJjbHI3cjd3bm4yYmx1Mmt0YWliN3J6Nm52In0.NGrE7tFIpWZVmRLV5M2zTA';
+
+    // Initialize the map
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/yichengucl/clvwzdgcj00zi01quh3ym9crb', // map style
+        center: [-74.006, 40.7128], // starting position [lng, lat]
+        zoom: 10 // starting zoom
+    });
+
+    map.on('load', function () {
+            // Define layers
+            var layers = [
+                '1996-2013',
+                '2014-2015',
+                '2016-2017',
+                '2018-2019',
+                '2020-2021',
+                '2022-2023',
+                '2024'
+            ];
+
+                // Initialize visibility of layers
+        Object.values(layers).forEach(layer => {
+            map.setLayoutProperty(layer, 'visibility', 'none');
+        });
+
+            // Show the first layer initially
+            map.setLayoutProperty(layers[0], 'visibility', 'visible');
+
+            // Update map layers based on slider value
+            document.getElementById('year-slider').addEventListener('input', function (e) {
+                var sliderValue = parseInt(e.target.value);
+
+                layers.forEach(function (layerId, index) {
+                    if (index <= sliderValue) {
+                        map.setLayoutProperty(layerId, 'visibility', 'visible');
+                    } else {
+                        map.setLayoutProperty(layerId, 'visibility', 'none');
+                    }
+                });
+
+                // Update label with the corresponding year range
+                document.getElementById('year-label').innerHTML = 'Year: ' + layers[sliderValue];
+            });
+        
+        });
+    </script>
+</body>
+</html>

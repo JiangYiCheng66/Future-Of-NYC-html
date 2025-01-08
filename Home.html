@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC - Home Page</title>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="./video/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="headerh">
+        <a href="Home.html" class="transparent-button">Home</a>
+        <a href="Solar Energy.html" class="transparent-button">Solar Energy</a>
+        <a href="Air Quality.html" class="transparent-button">Air Quality</a>
+        <a href="Green Space.html" class="transparent-button">Green Space</a>
+        <a href="Shared Mobility.html" class="transparent-button">Daily Travel</a>
+    </div>
+
+    <div class="main-content">
+        <h1 class="fade-in1">The Future of New York</h1>
+        <a class="fade-in2" id="start-button">START</a>
+    </div>
+
+    <div class="bottom-section">
+        <h2>OUR MISSION</h2>
+        <h3>To Build an Eco-friendly Living Area</h3>
+        <p>Our goal is to explore how citizens will live in cities in the future. 
+            We would like to explore the direction of urban development and how citizens will live in the city in the future through the four sectors of air quality, 
+            green space, shared mobility and solar energy.<br/>
+
+            These four sectors were chosen because we believe that this is the future trend of urban development, 
+            that is, to create a green, low-carbon and efficient living area. In the future, 
+            some energy sources that may cause air pollution will be replaced by cleaner energy sources, such as solar energy. 
+            The improvement of air quality will also lead to more greenery and parks in the city, 
+            which will purify the air and encourage people to travel at the same time. 
+            Good air quality and the spread of greenery and parks will attract people to walk on short trips or use shared bikes, 
+            reducing carbon emissions and creating a virtuous cycle.</p>
+            <p></p>
+            <p></p>
+            <a href="Solar Energy.html" id="explore-button">Explore</a>
+    </div>
+    <footer class="footer">
+        <h1>2024 CASA0003 Digital Visualisation Group 10</h1>
+        <p>Yicheng Jiang</p>
+        <p>Quanfu Lin</p>
+        <p>Tao Yang</p>
+    </footer>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.bottom-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,247 @@
+.headerh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Ensure no margin is affecting the placement */
+    background: rgba(0, 0, 0, 0.5); /* Optional: adds a slight darkening effect to improve readability */
+    z-index: 20;
+}
+
+.transparent-button {
+    text-decoration: none; 
+    flex-grow: 1;
+    background: rgba(203, 203, 203, 0.2);
+    border: none;
+    color: rgb(255, 180, 240);
+    padding: 20px 20px;
+    font-size: 18px;
+    font-weight: 800;
+    font-family:Arial;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-align: center;
+    text-shadow:5px 5px 20px rgb(0, 0, 0);
+
+}
+
+.transparent-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.main-content h1 {
+    text-shadow: ch;
+    color: rgb(206, 206, 206);
+    font-size: 72px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow:0px 5px 20px rgb(226, 61, 255);
+
+}
+
+
+
+.main-content h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1500;
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+}
+
+#start-button {
+    padding: 8px 25px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: white;
+    background-color: #ee7fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; 
+    text-shadow:4px 0px 10px rgb(0, 0, 0);
+
+}
+
+#start-button:hover {
+    background-color: #d634ff;
+}
+
+#explore-button {
+    padding: 8px 25px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: white;
+    background-color: #ee7fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; 
+    text-shadow:4px 0px 10px rgb(0, 0, 0);
+
+}
+
+#explore-button:hover {
+    background-color: #d634ff;
+}
+
+
+.bottom-section {
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000000; /* Light grey background for visibility */
+    text-align: center;
+    margin-top: 100vh; /* Ensure the bottom-section does not overlap with main content */
+}
+
+
+.bottom-section h2 {
+    color: #f893ff;
+	padding: 0px 0px 0px 0px;
+	font-size: 48px;
+	font-weight: 700;
+	font-family: 'Play-Regular';
+	text-align: center;
+    text-shadow:4px 4px 10px rgb(125, 0, 147);
+}
+
+.bottom-section h3 {
+    color: #53b7ff;
+	padding: 0px 0px 0px 0px;
+    margin-top: 12px;
+	font-size: 28px;
+	font-weight: 700;
+	font-family: 'Play-Regular';
+	text-align: center;
+    text-shadow:4px 4px 10px rgb(61, 139, 255);
+}
+
+.bottom-section p {
+    background-blend-mode:color-burn;
+    width: 63%;
+	color: #d5d5d5;
+	font-size: 22px;
+	margin: 15px 0 0 0;
+	font-family: 'Play-Regular';
+    font-weight: 800;
+    text-align: justify;
+	line-height: 1.6em;
+	padding: 0 15px;
+    text-shadow:4px 4px 10px rgb(0, 0, 0);
+
+}
+
+/* Styles for the footer */
+.footer {
+    background-color: #ffffff10; /* Dark background color */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 1em 0;
+    position: relative; /* Ensure it's positioned correctly */
+    width: 100%;
+    bottom: 0;
+}
+
+.footer h1 {
+    color: rgb(190, 190, 190);
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+    font-weight: 500;
+    font-size:20;
+    }
+
+.footer p {
+color: rgb(190, 190, 190);
+text-shadow: 0 0 10px rgb(0, 0, 0);
+font-weight: 500;
+font-size:20;
+}
+
+
+
+@keyframes fadeIn1 {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in1 {
+    animation: fadeIn1 2s ease-in;
+}
+.fade-in2 {
+    animation: fadeIn2 2s ease-in;
+}
+
+
+
+
+
+

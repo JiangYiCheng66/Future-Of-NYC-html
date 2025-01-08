@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC - Shared Mobility</title>
+    <link rel="stylesheet" href="./css/4-sectors-nav.css">
+    <link rel="stylesheet" href="./css/Shared Mobility.css">
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <link href="css/home.css" rel='stylesheet' type='text/css' />
+
+
+
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="./video/background-blur.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="header">
+        <a href="Home.html" class="transparent-button">Home</a>
+        <a href="Solar Energy.html" class="transparent-button">Solar Energy</a>
+        <a href="Air Quality.html" class="transparent-button">Air Quality</a>
+        <a href="Green Space.html" class="transparent-button">Green Space</a>
+        <a href="Shared Mobility.html" class="transparent-button">Daily Travel</a>
+    </div>
+    <div class="container-sm">
+		<div class="text-section">
+			<h4>NYC Bike Trip</h4>
+			<p>In the future, the travelling method of shared bicycle travel will become a common way of travelling for New Yorkers. Bicycle sharing is not only a low-carbon and environmentally friendly way of travelling, but also a solution to the "last mile" problem. As can be seen from the linear and bar charts below, the number of trips New Yorkers make each year using shared bikes is on a significant upward trend, reaching almost three times the number of trips they made in 2015 by 2022, and continuing to rise in 2023.</p>	
+		</div>
+
+        <div class="chart-section">
+            <div id="sm_chart1" class="fadeInAnimation" style="width: 600px; height: 350px; margin: 1 auto;"></div>
+        </div>
+    </div>
+	<div class="container-sm sm2" background-color: #e9ecef;>
+		<div class="chart-section">
+            <div id="sm_chart2" class="fadeInAnimation" style="width: 600px; height: 350px; margin: 1 auto;"></div>
+        </div>
+        <div class="text-section">
+			<h4>Bike-sharing Station</h4>
+			<p>At the same time, the number of bike-sharing stations is also rising in parallel to meet the increasing demand for bike-sharing. This also reflects the future of travelling in New York's living area.</p>	
+		</div>
+    </div>
+	<div class="text-section_map">
+		<h4>NYC Bike Map</h4>
+		<p>The map below shows the lanes, street seats, and pedestrian plazas information for the annual New York City Bike Map designed by the City of New York. The Bike Map is a map updated by the DOT (Department of Transportation) for use by New Yorkers that details the location of bike lanes built by the City of New York. Whereas street seat is a programme to transform underutilised streets into social spaces by creating seats in the streets. pedestrian plazas are social public spaces built by the New York government in order to achieve a 10-minute walking distance from quality open spaces. As you can see the range of bike lanes planned by the New York City government has been very wide since 2017, encompassing Manhattan, Brooklyn, Queens and more. Over time, the number and coverage of bike lanes has gradually increased. At the same time, it will be found that there will be a high degree of overlap between bike lanes and pedestrian plazas, connecting different pedestrian plazas and promoting low-carbon and efficient travelling.</p>	
+	</div>
+	<div class="iframe-container">
+		<iframe src="Shared Mobility_map.html" width="85%" height="100%" ></iframe>
+	</div>
+    <!--start-charts-->
+	<script src='./js/sm_chart1.js' type="text/javascript"></script>
+	<script src='./js/sm_chart2.js' type="text/javascript"></script>
+	<!--end-charts-->
+</body>
+       

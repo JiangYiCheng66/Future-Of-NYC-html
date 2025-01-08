@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC - Solar Energy</title>
+    <link rel="stylesheet" href="./css/4-sectors-nav.css">
+    <link rel="stylesheet" href="./css/Solar Energy.css">
+    <link href="css/home.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
+
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="./video/background-blur.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="header">
+        <a href="Home.html" class="transparent-button">Home</a>
+        <a href="Solar Energy.html" class="transparent-button">Solar Energy</a>
+        <a href="Air Quality.html" class="transparent-button">Air Quality</a>
+        <a href="Green Space.html" class="transparent-button">Green Space</a>
+        <a href="Shared Mobility.html" class="transparent-button">Daily Travel</a>
+    </div>
+
+    <div class="container-sm sm2">
+		<div class="text-section">
+			<h4>1,000 megawatts goal by 2030</h4>
+			<p>New York City aims to install 1,000 megawatts of solar across the city by 2030, enough to power 250,000 homes. 
+                Solar panels enable buildings to generate their own emissions-free electricity and save residents money by reducing the amount of electricity they need to purchase from utility companies. On-site and community solar generation can help reduce grid energy consumption, 
+                especially when combined with energy storage, which can help shift peak consumption.
+                In addition, the city uses municipal properties to install solar and is committed to installing 100 megawatts of rooftop solar on city-owned buildings by 2025, 
+                reducing greenhouse gas emissions from city-owned buildings and operations by 50% by 2030. (50% reduction compared to 2005 levels)<br/>
+                Solar deployment has grown substantially in New York City in the past decade. As of Summer 2022, 
+                there were 350 megawatts installed, which can produce enough energy to cover approximately 90,000 average NYC households’ electric bills.
+            </p>	
+		</div>
+
+        <div class="chart-section">
+            <div id="se_chart1" class="fadeInAnimation" style="width: 600px; height: 350px; margin: 1 auto;"></div>
+        </div>
+    </div>
+	<div class="text-section_map">
+		<h4>NYC Solar installations Map</h4>
+		<p>The map below shows the locations of solar installations by different years and under construction in 2024 in New York City, 
+            The power of each solar installation is visualized from light blue to deep blue. (Map updated in March 2024)</p>	
+	</div>
+	<div class="iframe-container">
+		<iframe src="Solar Energy_map.html" width="85%" height="100%" ></iframe>
+	</div>
+
+	<script src='./js/se_chart1.js' type="text/javascript"></script>
+
+</body>
+       

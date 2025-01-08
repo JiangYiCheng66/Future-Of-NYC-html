@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #eef2f5;
+    color: #444;
+}
+
+/* Position and size of map container */
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Navigation bar */
+.geocoder {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+}
+
+/* Color scale */
+.color-axis-bg {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.color-axis {
+    display: flex;
+    align-items: flex-end;
+}
+
+#color-scale {
+    width: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#color-scale div {
+    height: 30px;
+    border-bottom: 1px solid #bbb;
+    opacity: 0.8;
+}
+
+.year-scale-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#year-scale-line {
+    height: 100%;
+    border-right: 1px solid #bbb;
+    margin-left: 5px;
+}
+
+#year-scale {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+#year-scale span {
+    height: 30px;
+    line-height: 60px;
+}
+
+/* Popup style */
+.mapboxgl-popup {
+    max-width: 200px;
+    font: 12px/20px 'Arial', sans-serif;
+}
+
+/* Style of h1 font */
+h1 {
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 1px solid #666;
+    color: #3498db;
+}
+
+/* Style of h2 font */
+.map-overlay h2 {
+    line-height: 50px;
+    display: block;
+    margin: 0;
+}
+
+h2#aaa {
+    margin: 0 0 6px 0;
+    padding: 0;
+    font: 14px 'Arial', sans-serif;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Title style */
+.title {
+    font: 12px/20px 'Arial', sans-serif;
+    position: absolute;
+    width: 250px;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 2px #aaa;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+/* Animation button styles */
+.animation-button, .flyto-animation-button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 5px 15px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.animation-button {
+    background-color: #28a745;
+}
+
+.animation-button:hover {
+    background-color: #5cd65c;
+}
+
+.flyto-animation-button {
+    background-color: #dc3545;
+}
+
+.flyto-animation-button:hover {
+    background-color: #e57373;
+}
+
+/* Popup content style */
+.mapboxgl-popup-content {
+    border-radius: 10px;
+}
+
+/* Chart title style */
+#charttitle {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Iframe style */
+iframe {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+/* Map overlay style */
+.map-overlay {
+    font: 12px/20px 'Arial', sans-serif;
+    position: absolute;
+    width: 400px;
+    min-width: 400px;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    margin-top: 80px;
+    color: #007bff;
+}
+
+.map-overlay .map-overlay-inner {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 2px #aaa;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.map-overlay input {
+    background-color: transparent;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    cursor: ew-resize;
+}
+
+/* SVG style */
+svg {
+    position: relative;
+    top: 10px;
+}
+
+/* Map description style */
+.map-discription {
+    float: right;
+    color: rgba(120, 120, 120, 0.8);
+}

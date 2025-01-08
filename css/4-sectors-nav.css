@@ -1,0 +1,40 @@
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Ensure no margin is affecting the placement */
+    background: rgba(0, 0, 0, 0.5); /* Optional: adds a slight darkening effect to improve readability */
+    z-index: 2;
+}
+
+.transparent-button {
+    text-decoration: none; 
+    flex-grow: 1;
+    background: rgba(0, 80, 191, 0);
+    border: none;
+    color: rgb(255, 180, 240);
+    padding: 20px 20px;
+    font-size: 18px;
+    font-weight: 800;
+    font-family:Arial;
+    cursor: pointer;
+    /* transition: background 0.5s ease; */
+    transition: all 0.5s ease;
+    text-align: center;
+    text-shadow:5px 5px 20px rgb(0, 0, 0);
+
+    
+}
+
+.transparent-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+

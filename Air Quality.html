@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC - Air Quality</title>
+    <link rel="stylesheet" href="./css/4-sectors-nav.css">
+    <link rel="stylesheet" href="./css/Air Quality.css">
+    <link href="css/home.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
+
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="./video/background-blur.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="header">
+        <a href="Home.html" class="transparent-button">Home</a>
+        <a href="Solar Energy.html" class="transparent-button">Solar Energy</a>
+        <a href="Air Quality.html" class="transparent-button">Air Quality</a>
+        <a href="Green Space.html" class="transparent-button">Green Space</a>
+        <a href="Shared Mobility.html" class="transparent-button">Daily Travel</a>
+    </div>
+
+    <div class="container-sm sm2">
+		<div class="text-section">
+			<h4>NYC PM2.5</h4>
+			<p>The air pollution data comes from the New York City Community Air Survey, which details air quality trends from 19 to 21 in various areas of New York, including pm2.5 and more. Poor air quality can cause various effects such as
+                Coughing
+                Tightness in the chest
+                Worsening of asthma
+                Reduced lung function
+                Increased risk of heart attack and stroke
+                Low birthweight in newborns.<br/>
+
+                Today, with the support of New York City's OneNYC programme (New York City's long-term sustainability plan), emissions of all types of air pollution are declining year after year, thanks to the use of cleaner energy sources, as well as greening of the city and changes in the way people get around, all of which contribute to better air quality.</p>	
+		</div>
+
+        <div class="chart-section">
+            <div id="aq_chart1" class="fadeInAnimationa1" style="width: 600px; height: 350px; margin: 1 auto;"></div>
+        </div>
+    </div>
+	<div class="text-section_map">
+		<h4>NYC Air Quality Map</h4>
+		<p>In the map we can clearly see that the air quality in the Manhattan area of New York City is very bad, 
+            but over time the PM2.5 levels in New York City as a whole are decreasing, 
+            reflecting the "low carbon" future of urban life.</p>	
+	</div>
+	<div class="iframe-container">
+		<iframe src="Air Quality_map.html" width="85%" height="100%" ></iframe>
+	</div>
+
+	<script src='./js/aq_chart1.js' type="text/javascript"></script>
+
+</body>
+       

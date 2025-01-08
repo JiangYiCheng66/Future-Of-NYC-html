@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC - Green Space</title>
+    <link rel="stylesheet" href="./css/4-sectors-nav.css">
+    <link rel="stylesheet" href="./css/Green Space.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="./video/background-blur.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="header">
+        <a href="Home.html" class="transparent-button">Home</a>
+        <a href="Solar Energy.html" class="transparent-button">Solar Energy</a>
+        <a href="Air Quality.html" class="transparent-button">Air Quality</a>
+        <a href="Green Space.html" class="transparent-button">Green Space</a>
+        <a href="Shared Mobility.html" class="transparent-button">Daily Travel</a>
+    </div>
+    <div class="container-sm sm2">
+		<div class="text-section">
+			<h4>NYC Green Space</h4>
+			<p>The line graph shows that the total acreage of parks and green space in New York City has continued to increase from 2000 to 2024, 
+                while the rate of growth has increased in recent years. This trend reflects New York City's commitment to creating healthier, greener living environments through environmental improvements by expanding the amount of green space over time.
+                The expansion of parks and green spaces plays a vital role in the city's green development. Firstly, 
+                increased park areas help improve urban air quality, creating a healthier living environment. 
+                Secondly, these green spaces provide recreational areas for residents, encourage the use of shared bicycles, and reduce the use of private cars. 
+                This not only enhances the city's potential for sustainable development but also improves the quality of life and community environment for residents.</p>	
+		</div>
+
+        <div class="chart-section">
+            <div id="gs_chart1" class="fadeInAnimation" style="width: 600px; height: 350px; margin: 1 auto;"></div>
+        </div>
+    </div>
+	<div class="text-section_map">
+		<h4>NYC Green Space Map</h4>
+		<p>This interactive visualization map of green park changes explores the evolution of New York City's green spaces over time. 
+            The map displays the changes in the city's green parks from 2000 to 2025, creating a time travel experience through past and future green infrastructure. 
+            Hovering over a park displays the park's name and total area in acres, providing detailed information about the specific characteristics of each park. 
+            Through the search bar, users can find parks by name, making it easier to directly locate and learn about specific areas. 
+            Finally, the interface includes an option to visit park websites for more comprehensive information, thereby enhancing user interaction and ease of access to more detailed information.</p>	
+	</div>
+	<div class="iframe-container">
+		<iframe src="Green Space_map.html" width="85%" height="100%" ></iframe>
+	</div>
+    <script src='./js/gs_chart1.js' type="text/javascript"></script>
+</body>
+   
+       

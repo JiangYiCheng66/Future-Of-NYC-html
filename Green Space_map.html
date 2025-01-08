@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NYC Green Parks Interactive Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="./css/Green Space_map.css" rel="stylesheet" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+</head>
+
+<body>
+    <div>
+        <div id='map'></div>
+        <div id='geocoder' class='geocoder'></div>
+
+        <div class="color-axis-bg">
+            <div class="color-axis">
+                <div id="color-scale"></div>
+                <div class="year-scale-container">
+                    <div id="year-scale-line"></div>
+                    <div id="year-scale"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="title">
+            <h1>NYC Green Parks</h1>
+        </div>
+
+        <div class="map-overlay top">
+            <div class="map-overlay-inner">
+                <div id="timeline">
+                    <table>
+                        <tr>
+                            <td>
+                                <input id='slider' type='range' min='0' max='5' step='1' value='0' list='tickmarks' />
+                                <datalist id="tickmarks">
+                                    <option value="0" label="2000">
+                                    <option value="1" label="2005">
+                                    <option value="2" label="2010">
+                                    <option value="3" label="2015">
+                                    <option value="4" label="2020">
+                                    <option value="5" label="2025">
+                                </datalist>
+                            </td>
+                            <td>
+                                <label id='year2'>2000</label>
+                            </td>
+                            <td>
+                                <button id="animationButton" class="animation-button" onclick="toggleAnimation()">Start</button>
+                                <button id="flytoAnimationButton" class="flyto-animation-button" onclick="flyToAnimation()">FlyTo Start</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h2> Move to each area to view information</h2>
+                <h2 id="park-name">Park Name: <span id="park-name"></span></h2>
+                <h2 id="Property-Type">Property Type: <span id="Property-Type"></span></h2>
+                <h2 id="ACRES">Size of the park property (acres): <span id="acres-value"></span></h2>
+                <h2 id="URL-1">More Information about Park:</h2>
+                <a id="URL-2" href="#" target="_blank">Visit Park Website</a>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/Green Space_map.js"></script>
+</body>
+</html>

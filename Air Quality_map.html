@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mapbox Time Slider Example</title>
+<link href="./css/Air Quality.css" rel='stylesheet' type='text/css' />
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+</head>
+<body>
+
+<div id="map"></div>
+<div id="map_interactive">
+    <div class='map-overlay'>
+        <div class="map-overlay-inner">
+            <h2 class="graph">NYC Air Qualiry Map (PM2.5)</h2>
+            <table><tr><td>
+            <input id='slider' type='range' min='2017' max='2022' step='1' value='2017' list='tickmarks' />
+            <datalist id="tickmarks">
+              <option value="2017">
+              <option value="2018">
+              <option value="2019">
+              <option value="2020">
+              <option value="2021">
+              <option value="2022">
+              </datalist>
+             </td>
+             <td>
+              <label id='year'>2017</label>
+             </td>
+             </tr></table>
+             <p class=>Data: <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/air-quality/?id=2023#display=map">NEW YORK CITY AIR QUALITY</a></p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoieWljaGVuZ3VjbCIsImEiOiJjbHI3cjd3bm4yYmx1Mmt0YWliN3J6Nm52In0.NGrE7tFIpWZVmRLV5M2zTA'; // Replace with your Mapbox access token
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/yichengucl/clw2bkzeg02hc01qz20225ybc', // or your custom style URL
+        center: [-74.0060, 40.7128], // Coordinates of NYC
+        zoom: 10
+    });
+
+    const layers = {
+        '2017': '2017-pm2.5',
+        '2018': '2018-pm2.5',
+        '2019': '2019-pm2.5',
+        '2020': '2020-pm2.5',
+        '2021': '2021-pm2.5',
+        '2022': '2022-pm2.5'
+    };
+    const layerslabel = {
+        '2017': '2017-pm2.5-label',
+        '2018': '2018-pm2.5-label',
+        '2019': '2019-pm2.5-label',
+        '2020': '2020-pm2.5-label',
+        '2021': '2021-pm2.5-label',
+        '2022': '2022-pm2.5-label'
+    };
+
+    map.on('load', function() {
+
+        const legend = document.createElement('div');
+        legend.id = 'legend';
+        legend.innerHTML = '<div><span style="height: 10px; width: 10px; display: inline-block;"></span>Fine particles (PM 2.5): Mean (mcg/m3)</div>';
+        map.getContainer().appendChild(legend);
+
+        // Initialize visibility of layers
+        Object.values(layers).forEach(layer => {
+            map.setLayoutProperty(layer, 'visibility', 'none');
+        });
+        // Set initial visible layer
+
+        map.setLayoutProperty("2017-pm2.5-label", 'visibility', 'visible');
+        map.setLayoutProperty(layers['2017'], 'visibility', 'visible');
+
+        document.getElementById('slider').addEventListener('input', function(e) {
+            var year = e.target.value;
+            document.getElementById('year').innerHTML = 'Year: ' + year;
+            Object.values(layers).forEach(layer => {
+                map.setLayoutProperty(layer, 'visibility', 'none');
+            });
+            Object.values(layerslabel).forEach(layer => {
+                map.setLayoutProperty(layer, 'visibility', 'none');
+            });
+            map.setLayoutProperty(layers[year], 'visibility', 'visible');
+            map.setLayoutProperty(layerslabel[year], 'visibility', 'visible');
+
+        });
+    });
+    
+</script>
+
+</body>
+</html>

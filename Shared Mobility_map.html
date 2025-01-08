@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link href="./css/Shared Mobility.css" rel='stylesheet' type='text/css' />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+</head>
+<body>    
+    <div id ='map'></div>
+    <div id="map_interactive">
+        <div class='map-overlay'>
+            <div class="map-overlay-inner">
+                <h2 class="graph">NYC Bike Map</h2>
+                <table><tr><td>
+                <input id='slider' type='range' min='2017' max='2022' step='1' value='2017' list='tickmarks' />
+                <datalist id="tickmarks">
+                  <option value="2017">
+                  <option value="2018">
+                  <option value="2019">
+                  <option value="2020">
+                  <option value="2021">
+                  <option value="2022">
+                  </datalist>
+                 </td>
+                 <td>
+                  <label id='year'>2017</label>
+                 </td>
+                 </tr></table>
+                 <p>data: <a href="https://www.nyc.gov/html/dot/html/bicyclists/bikemaps.shtml">NEW YORK CITY DOT</a></p>
+                 <p><input type="checkbox" id="toggleCheckbox">Street Seats</p>
+                 <p><input type="checkbox" id="toggleCheckbox2">Pedestrian Plazas</p>
+                 <button id="myButton">Hide bike lanes</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoid2hpdGV3YXRlcmRyIiwiYSI6ImNscmgybzlraTBramwybG8yd2w1dHI4OHEifQ.IezgkKwXPtDozXHap3nc-A'
+        
+        // Load a new map in the 'map' HTML div
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/whitewaterdr/clvv9ym9a025701oc2wao00u8', 
+            center: [-73.976, 40.708], // starting position [lng, lat]
+            zoom: 11 // starting zoom
+        });
+        map.on('load', function() {       
+            map.setLayoutProperty("nyc-dot-pedestrian-plazas-202-15wypr", 'visibility', 'none');
+            map.setLayoutProperty("street-seats-2014-2019-2024-6k65r3", 'visibility', 'none');
+            map.setLayoutProperty("2018", 'visibility', 'none');
+            map.setLayoutProperty("2019", 'visibility', 'none');
+            map.setLayoutProperty("2020", 'visibility', 'none');
+            map.setLayoutProperty("2021", 'visibility', 'none');
+            map.setLayoutProperty("2022", 'visibility', 'none');
+
+            document.getElementById('slider').addEventListener('input', function(e) {
+                var year = parseInt(e.target.value);
+                years = year.toString();
+                document.getElementById('year').textContent = year;
+                console.log(year)
+                for (var i = year; i < 2023; i++) {
+                    map.setLayoutProperty(i.toString(), 'visibility', 'none')
+                }
+                map.setLayoutProperty(year.toString(), 'visibility', 'visible')
+
+            });
+
+
+            document.getElementById("toggleCheckbox").addEventListener("change", function(){
+                if (this.checked) {
+                    map.setLayoutProperty("street-seats-2014-2019-2024-6k65r3", 'visibility', 'visible');
+                } else {
+                    map.setLayoutProperty("street-seats-2014-2019-2024-6k65r3", 'visibility', 'none');
+                }
+            })
+
+            document.getElementById("toggleCheckbox2").addEventListener("change", function(){
+                if (this.checked) {
+                    map.setLayoutProperty("nyc-dot-pedestrian-plazas-202-15wypr", 'visibility', 'visible');
+                } else {
+                    map.setLayoutProperty("nyc-dot-pedestrian-plazas-202-15wypr", 'visibility', 'none');
+                }
+            })
+
+            document.getElementById("myButton").addEventListener("click", function() {
+            map.setLayoutProperty("2017", 'visibility', 'none');
+            map.setLayoutProperty("2018", 'visibility', 'none');
+            map.setLayoutProperty("2019", 'visibility', 'none');
+            map.setLayoutProperty("2020", 'visibility', 'none');
+            map.setLayoutProperty("2021", 'visibility', 'none');
+            map.setLayoutProperty("2022", 'visibility', 'none');
+
+            });
+
+        })
+    </script>
+</body>
+</html>
